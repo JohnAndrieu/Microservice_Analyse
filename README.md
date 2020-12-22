@@ -10,4 +10,4 @@
 
 ```cd app```
 
-```sudo python app.py```
+```sudo python main.py```
