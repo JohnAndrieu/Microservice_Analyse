@@ -11,3 +11,5 @@
 ```cd app```
 
 ```sudo python main.py```
+
+Navigate to 127.0.0.1/csv or /data
