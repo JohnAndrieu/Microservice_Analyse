@@ -1,9 +1,11 @@
-from flask import Flask
+# src/app/main.py
+
+from flask import Flask, jsonify
 import happybase
 import string
 app = Flask(__name__)
 
-outputDir = "out"
+outputDir = "../app/out"
 
 @app.route("/csv")
 def hbaseCSV():
@@ -37,7 +39,7 @@ def hbaseCSV():
         except:
             return "Error check logs"
 
-    return "Done"
+    return jsonify({"message":"Done"})
 
 @app.route("/data")
 def index():
@@ -47,7 +49,7 @@ def index():
     for col in data:
         print("col : ",col)
     
-    return str(table.rows('1:2'))
+    return jsonify({"message":str(table.rows('1:2'))})
         
 if __name__ == '__main__':
     app.run(host='127.0.0.1', port=80, debug=True)
