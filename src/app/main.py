@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 outputDir = "../app/out"
 
-@app.route("/csv")
+@app.route("/results_analyses/csv")
 def hbaseCSV():
     c = happybase.Connection(host='192.168.37.40',port=50001)
 
@@ -56,4 +56,4 @@ def index():
     return jsonify({"message":str(table.rows('1:2'))})
         
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=80, debug=True)
+    app.run(host='127.0.0.1', port=50003, debug=True)
