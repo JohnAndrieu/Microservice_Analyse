@@ -28,13 +28,17 @@ def hbaseCSV():
             data = t.scan()
 
             for col in data:
-                print(col)
+                #print(col)
                 row = str(col[0], 'utf-8')
+                values = ""
+                file.write(f'{row}')
                 for column, value in col[1].items():
                     column = str(column, 'utf-8')
                     value = str(value, 'utf-8')
-                # Write row, column, value to file
-                file.write(f'{row}, {column}, {value}\n')
+                    file.write(f',{value}')
+                #print(values)
+                #Write row, column, value to file
+                file.write(f'\n')
                 count += 1
         except:
             return "Error check logs"
