@@ -35,7 +35,7 @@ def hbaseCSV():
                 for column, value in col[1].items():
                     column = str(column, 'utf-8')
                     value = str(value, 'utf-8')
-                    file.write(f',{value}')
+                    file.write(f'\t{value}')
                 #print(values)
                 #Write row, column, value to file
                 file.write(f'\n')
