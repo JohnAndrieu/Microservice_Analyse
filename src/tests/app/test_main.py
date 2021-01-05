@@ -3,7 +3,7 @@
 import string
 
 def test_csv(client):
-    response = client.get('/csv')
+    response = client.get('/results_analyses/csv')
     assert response.status_code == 200
     result = response.get_json()
     assert result is not None
