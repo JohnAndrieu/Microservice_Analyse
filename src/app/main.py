@@ -56,4 +56,4 @@ def index():
     return jsonify({"message":str(table.rows('1:2'))})
         
 if __name__ == '__main__':
-    app.run(host='192.168.37.106', port=50003, debug=True)
+    app.run(host='192.168.1.156', port=50003, debug=True)
